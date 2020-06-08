@@ -1,8 +1,8 @@
 package com.example.dagger2example.api
 
-import com.example.dagger2example.models.Album
-import com.example.dagger2example.models.Post
-import com.example.dagger2example.models.User
+import com.example.dagger2example.models.AlbumViewModel
+import com.example.dagger2example.models.PostViewModel
+import com.example.dagger2example.models.UserViewModel
 import com.example.dagger2example.util.Constants
 import io.reactivex.Observable
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -13,19 +13,19 @@ import retrofit2.http.Path
 interface ApiServiceInterface {
 
     @GET("albums")
-    fun getAlbumList(): Observable<List<Album>>
+    fun getAlbumList(): Observable<List<AlbumViewModel>>
 
     @GET("albums/{id}")
-    fun getAlbum(@Path("id") id: Int): Observable<Album>
+    fun getAlbum(@Path("id") id: Int): Observable<AlbumViewModel>
 
     @GET("posts")
-    fun getPostList(): Observable<List<Post>>
+    fun getPostList(): Observable<List<PostViewModel>>
 
     @GET("post/{id}")
-    fun getPost(@Path("id") id: Int): Observable<Post>
+    fun getPost(@Path("id") id: Int): Observable<PostViewModel>
 
     @GET("users")
-    fun getUserList(): Observable<List<User>>
+    fun getUserList(): Observable<List<UserViewModel>>
 
 
     companion object Factory {
